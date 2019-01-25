@@ -9,12 +9,12 @@ gem 'awesome_print'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'committee'
 gem 'devise_token_auth'
-gem 'omniauth'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'prmd'
 gem 'puma', '~> 3.11'
 gem 'rack-cors', require: 'rack/cors'
-gem 'rails', '~> 5.2.2'
+gem 'rails', '~> 5.2.1'
+gem 'state_machines-activerecord'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -39,5 +39,4 @@ group :test do
   gem 'timecop', '~> 0.9.1'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
