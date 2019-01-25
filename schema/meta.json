@@ -1,0 +1,10 @@
+{
+  "description": "The API for Gcer",
+  "id": "gcer-api",
+  "links": [{
+    "href": "https://api.gcer.com",
+    "rel": "self"
+  }],
+  "title": "Gcer - API"
+ }
+ 
