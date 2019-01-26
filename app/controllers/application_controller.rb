@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   include DeviseTokenAuth::Concerns::SetUserByToken
+  skip_before_action :verify_authenticity_token
 
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity
