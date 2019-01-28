@@ -69,7 +69,7 @@ jobs:
                             --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
                             --format progress
-            ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
+            ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $? --id a0f9c68ac11e1c05d66f19af1c528aa46406cde1
       # collect reports
       - store_test_results:
           path: /tmp/test-results
