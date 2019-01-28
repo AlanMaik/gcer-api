@@ -38,6 +38,7 @@ jobs:
             gem install bundler
             sudo apt update
             sudo apt install postgresql-client
+            bundle install
       - save_cache:
           paths:
             - ./vendor/bundle
