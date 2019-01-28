@@ -5,6 +5,7 @@ application up and running.
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/0cf99d2de25c5b22a174/maintainability)](https://codeclimate.com/github/AlanMaik/gcer-api/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/0cf99d2de25c5b22a174/test_coverage)](https://codeclimate.com/github/AlanMaik/gcer-api/test_coverage)
+[![CircleCI](https://circleci.com/gh/AlanMaik/gcer-api/tree/master.svg?style=svg)](https://circleci.com/gh/AlanMaik/gcer-api/tree/master)
 
 Things you may want to cover:
 
