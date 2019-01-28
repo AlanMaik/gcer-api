@@ -1,0 +1,43 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title: GCER - User
+description: Users
+stability: prototype
+type:
+- object
+definitions:
+  id:
+    description: unique identifier of the user
+    readOnly: true
+    type: integer
+  email:
+    description: the email of the user
+    readOnly: true
+    type: string
+  identity:
+    anyOf:
+    - $ref: /schemata/user#/definitions/id
+links:
+  - description: List users
+    href: /users
+    method: GET
+    rel: instances
+    schema:
+      strictProperties: true
+      properties: {}
+      type:
+        - object
+    targetSchema:
+      anyOf:
+        - type: array
+          items:
+            $ref: /schemata/user
+        - $ref: /schemata/error
+    title: List
+properties:
+  id:
+    $ref: /schemata/user#/definitions/id
+  email:
+    $ref: /schemata/user#/definitions/email
+additionalProperties: false
+id: schemata/user

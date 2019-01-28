@@ -7,4 +7,11 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :trackable, :validatable
 
   include DeviseTokenAuth::Concerns::User
+
+  def as_json(_options = {})
+    {
+      id: id,
+      email: email
+    }
+  end
 end
