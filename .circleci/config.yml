@@ -36,8 +36,6 @@ jobs:
             echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $BASH_ENV
             source $BASH_ENV
             gem install bundler
-          name: install dependencies
-          command: |
             sudo apt update
             sudo apt install postgresql-client
       - save_cache:
