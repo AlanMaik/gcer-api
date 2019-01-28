@@ -12,7 +12,6 @@ jobs:
            PGHOST: 127.0.0.1
            PGUSER: root
            RAILS_ENV: test
-           CC_TEST_REPORTER_ID: a0f9c68ac11e1c05d66f19af1c528aa46406cde1
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -69,7 +68,7 @@ jobs:
                             --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
                             --format progress
-            ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $? --id a0f9c68ac11e1c05d66f19af1c528aa46406cde1
+            ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
       # collect reports
       - store_test_results:
           path: /tmp/test-results
