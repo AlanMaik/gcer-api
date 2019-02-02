@@ -9,11 +9,23 @@ describe 'GET /users', type: :request do
     [
       {
         id: User.last.id,
-        email: 'foobar@bar.com'
+        email: 'foobar@bar.com',
+        kind: nil,
+        specialty: nil,
+        phone: nil,
+        cpf: nil,
+        name: nil,
+        last_name: nil
       },
       {
         id: current_user.id,
-        email: current_user.email
+        email: current_user.email,
+        kind: nil,
+        specialty: nil,
+        phone: nil,
+        cpf: nil,
+        name: nil,
+        last_name: nil
       }
     ].to_json
   end
@@ -23,5 +35,6 @@ describe 'GET /users', type: :request do
     get '/users'
   end
 
+  it { expect(response).to have_http_status(:ok) }
   it { is_expected.to eq(expected_array) }
 end
