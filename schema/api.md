@@ -63,13 +63,23 @@ List users
 GET /users
 ```
 
+#### Optional Parameters
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **filter** | *string* | the filter of the user | `"example"` |
+| **range** | *string* | the range of the user | `"example"` |
+| **sort** | *string* | the sort of the user | `"example"` |
+
 
 #### Curl Example
 
 ```bash
 $ curl -n https://api.gcer.com/users
  -G \
-  -d 
+  -d filter=example \
+  -d range=example \
+  -d sort=example
 ```
 
 

@@ -81,6 +81,27 @@
             "string"
           ]
         },
+        "filter": {
+          "description": "the filter of the user",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "range": {
+          "description": "the range of the user",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "sort": {
+          "description": "the sort of the user",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
         "identity": {
           "anyOf": [
             {
@@ -96,8 +117,17 @@
           "method": "GET",
           "rel": "instances",
           "schema": {
-            "strictProperties": true,
+            "strictProperties": false,
             "properties": {
+              "filter": {
+                "$ref": "#/definitions/user/definitions/filter"
+              },
+              "range": {
+                "$ref": "#/definitions/user/definitions/range"
+              },
+              "sort": {
+                "$ref": "#/definitions/user/definitions/sort"
+              }
             },
             "type": [
               "object"
