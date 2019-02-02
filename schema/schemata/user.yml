@@ -14,18 +14,42 @@ definitions:
     description: the email of the user
     readOnly: true
     type: string
-  filter:
-    description: the filter of the user
+  kind:
+    description: the kind of the user, admin or professional or secretary
     readOnly: true
-    type: string
-  range:
-    description: the range of the user
+    type:
+    - string
+    - "null"
+  specialty:
+    description: the specialty of the professional
     readOnly: true
-    type: string
-  sort:
-    description: the sort of the user
+    type:
+    - string
+    - "null"
+  phone:
+    description: the phone of the user
     readOnly: true
-    type: string
+    type:
+    - string
+    - "null"
+  cpf:
+    description: the cpf of the user
+    readOnly: true
+    type:
+    - string
+    - "null"
+  name:
+    description: the name of the user
+    readOnly: true
+    type:
+    - string
+    - "null"
+  last_name:
+    description: the last name of the user
+    readOnly: true
+    type:
+    - string
+    - "null"
   identity:
     anyOf:
     - $ref: /schemata/user#/definitions/id
@@ -35,14 +59,8 @@ links:
     method: GET
     rel: instances
     schema:
-      strictProperties: false
-      properties:
-        filter:
-          $ref: /schemata/user#/definitions/filter
-        range:
-          $ref: /schemata/user#/definitions/range
-        sort:
-          $ref: /schemata/user#/definitions/sort
+      strictProperties: true
+      properties: {}
       type:
         - object
     targetSchema:
@@ -57,5 +75,17 @@ properties:
     $ref: /schemata/user#/definitions/id
   email:
     $ref: /schemata/user#/definitions/email
+  kind:
+    $ref: /schemata/user#/definitions/kind
+  specialty:
+    $ref: /schemata/user#/definitions/specialty
+  phone:
+    $ref: /schemata/user#/definitions/phone
+  cpf:
+    $ref: /schemata/user#/definitions/cpf
+  name:
+    $ref: /schemata/user#/definitions/name
+  last_name:
+    $ref: /schemata/user#/definitions/last_name
 additionalProperties: false
 id: schemata/user

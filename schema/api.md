@@ -52,8 +52,14 @@ Users
 
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
+| **cpf** | *nullable string* | the cpf of the user | `null` |
 | **email** | *string* | the email of the user | `"example"` |
 | **id** | *integer* | unique identifier of the user | `42` |
+| **kind** | *nullable string* | the kind of the user, admin or professional or secretary | `null` |
+| **last_name** | *nullable string* | the last name of the user | `null` |
+| **name** | *nullable string* | the name of the user | `null` |
+| **phone** | *nullable string* | the phone of the user | `null` |
+| **specialty** | *nullable string* | the specialty of the professional | `null` |
 
 ### <a name="link-GET-user-/users">User List</a>
 
@@ -63,23 +69,13 @@ List users
 GET /users
 ```
 
-#### Optional Parameters
-
-| Name | Type | Description | Example |
-| ------- | ------- | ------- | ------- |
-| **filter** | *string* | the filter of the user | `"example"` |
-| **range** | *string* | the range of the user | `"example"` |
-| **sort** | *string* | the sort of the user | `"example"` |
-
 
 #### Curl Example
 
 ```bash
 $ curl -n https://api.gcer.com/users
  -G \
-  -d filter=example \
-  -d range=example \
-  -d sort=example
+  -d 
 ```
 
 
