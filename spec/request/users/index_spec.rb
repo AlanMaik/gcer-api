@@ -5,10 +5,11 @@ require 'rails_helper'
 describe 'GET /users', type: :request do
   subject { response.body }
 
+  let(:id) { User.find_by(email: 'foobar@bar.com').id }
   let(:expected_array) do
     [
       {
-        id: User.last.id,
+        id: id,
         email: 'foobar@bar.com',
         kind: nil,
         specialty: nil,
@@ -36,5 +37,6 @@ describe 'GET /users', type: :request do
   end
 
   it { expect(response).to have_http_status(:ok) }
+  it { expect(User.count).to eq(2) }
   it { is_expected.to eq(expected_array) }
 end
