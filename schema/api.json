@@ -144,7 +144,7 @@
           "method": "GET",
           "rel": "instances",
           "schema": {
-            "strictProperties": true,
+            "aditionalProperties": true,
             "properties": {
             },
             "type": [
