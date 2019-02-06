@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe 'GET /users', type: :request do
+describe 'POST /users', type: :request do
   subject { response.body }
 
   let(:params) do
