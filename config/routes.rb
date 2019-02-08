@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :users, only: %i[index create]
   resources :services, only: %i[index create]
   resources :clients, only: %i[index create]
+  resources :specialties, only: %i[index create]
 end
