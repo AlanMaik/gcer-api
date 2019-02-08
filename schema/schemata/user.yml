@@ -1,7 +1,7 @@
 ---
 "$schema": http://json-schema.org/draft-04/hyper-schema
 title: GCER - User
-description: Users
+description: System user separator by type
 stability: prototype
 type:
 - object

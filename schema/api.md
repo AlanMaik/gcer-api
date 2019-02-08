@@ -42,18 +42,64 @@ HTTP/1.1 200 OK
 ```
 
 
+## <a name="resource-service">Service</a>
+
+Stability: `prototype`
+
+Services offered by professionals
+
+### Attributes
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **duration** | *integer* | the phone of the user | `42` |
+| **id** | *integer* | unique identifier of the user | `42` |
+| **price** | *nullable number* | the specialty of the professional | `null` |
+| **service** | *string* | the email of the user | `"example"` |
+| **[specialty](#resource-specialty)** | *string* | the name of the specialty | `"example"` |
+| **type_service** | *nullable string* | the kind of the user, admin or professional or secretary | `null` |
+
+### <a name="link-GET-service-/services">Service List</a>
+
+List services
+
+```
+GET /services
+```
+
+
+#### Curl Example
+
+```bash
+$ curl -n https://api.gcer.com/services
+ -G \
+  -d 
+```
+
+
+#### Response Example
+
+```
+HTTP/1.1 200 OK
+```
+
+```json
+null
+```
+
+
 ## <a name="resource-specialty">Specialty</a>
 
 Stability: `prototype`
 
-Specialties
+Specialties of the users for example Podologa, masseur
 
 ### Attributes
 
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
 | **id** | *integer* | unique identifier of the user | `42` |
-| **specialty** | *string* | the email of the user | `"example"` |
+| **specialty** | *string* | the name of the specialty | `"example"` |
 | **specialty_description** | *nullable string* | the description of the specialty | `null` |
 
 ### <a name="link-GET-specialty-/specialties">Specialty List</a>
@@ -89,7 +135,7 @@ null
 
 Stability: `prototype`
 
-Users
+System user separator by type
 
 ### Attributes
 

@@ -5,12 +5,20 @@ require 'rails_helper'
 describe 'POST /services', type: :request do
   subject { response.body }
 
+  let(:specialty) do
+    Specialty.create!(
+      specialty: 'foobar',
+      specialty_description: 'foobar baz bar'
+    )
+  end
+
   let(:params) do
     {
       service: 'foobar',
       type_service: 'baz',
       price: 10.00,
-      duraction: 60
+      duraction: 60,
+      specialty_id: specialty.id
     }.to_json
   end
 
