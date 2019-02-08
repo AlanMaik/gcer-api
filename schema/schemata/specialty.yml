@@ -1,0 +1,51 @@
+---
+"$schema": http://json-schema.org/draft-04/hyper-schema
+title: GCER - Specialty
+description: Specialties
+stability: prototype
+type:
+- object
+definitions:
+  id:
+    description: unique identifier of the user
+    readOnly: true
+    type: integer
+  specialty:
+    description: the email of the user
+    readOnly: true
+    type: string
+  specialty_description:
+    description: the description of the specialty
+    readOnly: true
+    type:
+    - string
+    - "null"
+  identity:
+    anyOf:
+    - $ref: /schemata/specialty#/definitions/id
+links:
+  - description: List specialties
+    href: /specialties
+    method: GET
+    rel: instances
+    schema:
+      aditionalProperties: true
+      properties: {}
+      type:
+        - object
+    targetSchema:
+      anyOf:
+        - type: array
+          items:
+            $ref: /schemata/specialty
+        - $ref: /schemata/error
+    title: List
+properties:
+  id:
+    $ref: /schemata/specialty#/definitions/id
+  specialty:
+    $ref: /schemata/specialty#/definitions/specialty
+  specialty_description:
+    $ref: /schemata/specialty#/definitions/specialty_description
+additionalProperties: false
+id: schemata/specialty

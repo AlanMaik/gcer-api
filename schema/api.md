@@ -42,6 +42,49 @@ HTTP/1.1 200 OK
 ```
 
 
+## <a name="resource-specialty">Specialty</a>
+
+Stability: `prototype`
+
+Specialties
+
+### Attributes
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **id** | *integer* | unique identifier of the user | `42` |
+| **specialty** | *string* | the email of the user | `"example"` |
+| **specialty_description** | *nullable string* | the description of the specialty | `null` |
+
+### <a name="link-GET-specialty-/specialties">Specialty List</a>
+
+List specialties
+
+```
+GET /specialties
+```
+
+
+#### Curl Example
+
+```bash
+$ curl -n https://api.gcer.com/specialties
+ -G \
+  -d 
+```
+
+
+#### Response Example
+
+```
+HTTP/1.1 200 OK
+```
+
+```json
+null
+```
+
+
 ## <a name="resource-user">User</a>
 
 Stability: `prototype`
