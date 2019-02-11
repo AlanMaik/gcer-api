@@ -10,7 +10,7 @@ class Service < ApplicationRecord
       type_service: type_service,
       price: price,
       duraction: duraction,
-      specialty: :specialty.as_json
+      specialty_id: specialty.id
     }
   end
 end

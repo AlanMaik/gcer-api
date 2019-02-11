@@ -52,11 +52,11 @@ Services offered by professionals
 
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
-| **duration** | *integer* | the phone of the user | `42` |
+| **duraction** | *integer* | the phone of the user | `42` |
 | **id** | *integer* | unique identifier of the user | `42` |
 | **price** | *nullable number* | the specialty of the professional | `null` |
 | **service** | *string* | the email of the user | `"example"` |
-| **[specialty](#resource-specialty)** | *string* | the name of the specialty | `"example"` |
+| **[specialty_id](#resource-specialty)** | *integer* | unique identifier of the user | `42` |
 | **type_service** | *nullable string* | the kind of the user, admin or professional or secretary | `null` |
 
 ### <a name="link-GET-service-/services">Service List</a>

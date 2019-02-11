@@ -14,7 +14,7 @@ describe 'GET /services', type: :request do
         type_service: 'baz',
         price: 10.00,
         duraction: 60,
-        specialty: specialty
+        specialty_id: specialty.id
       }
     ].to_json
   end

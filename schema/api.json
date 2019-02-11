@@ -97,7 +97,7 @@
             "null"
           ]
         },
-        "duration": {
+        "duraction": {
           "description": "the phone of the user",
           "readOnly": true,
           "type": [
@@ -119,7 +119,7 @@
           "method": "GET",
           "rel": "instances",
           "schema": {
-            "aditionalProperties": true,
+            "aditionalProperties": false,
             "properties": {
             },
             "type": [
@@ -157,11 +157,11 @@
         "price": {
           "$ref": "#/definitions/service/definitions/price"
         },
-        "duration": {
-          "$ref": "#/definitions/service/definitions/duration"
+        "duraction": {
+          "$ref": "#/definitions/service/definitions/duraction"
         },
-        "specialty": {
-          "$ref": "#/definitions/specialty/definitions/specialty"
+        "specialty_id": {
+          "$ref": "#/definitions/specialty/definitions/id"
         }
       },
       "additionalProperties": false
