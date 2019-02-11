@@ -58,10 +58,118 @@
         }
       }
     },
+    "service": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "GCER - Service",
+      "description": "Services offered by professionals",
+      "stability": "prototype",
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of the user",
+          "readOnly": true,
+          "type": [
+            "integer"
+          ]
+        },
+        "service": {
+          "description": "the email of the user",
+          "readOnly": true,
+          "type": [
+            "string"
+          ]
+        },
+        "type_service": {
+          "description": "the kind of the user, admin or professional or secretary",
+          "readOnly": true,
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "price": {
+          "description": "the specialty of the professional",
+          "readOnly": true,
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "duraction": {
+          "description": "the phone of the user",
+          "readOnly": true,
+          "type": [
+            "integer"
+          ]
+        },
+        "identity": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/service/definitions/id"
+            }
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "List services",
+          "href": "/services",
+          "method": "GET",
+          "rel": "instances",
+          "schema": {
+            "aditionalProperties": false,
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "targetSchema": {
+            "anyOf": [
+              {
+                "type": [
+                  "array"
+                ],
+                "items": {
+                  "$ref": "#/definitions/service"
+                }
+              },
+              {
+                "$ref": "#/definitions/error"
+              }
+            ]
+          },
+          "title": "List"
+        }
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/service/definitions/id"
+        },
+        "service": {
+          "$ref": "#/definitions/service/definitions/service"
+        },
+        "type_service": {
+          "$ref": "#/definitions/service/definitions/type_service"
+        },
+        "price": {
+          "$ref": "#/definitions/service/definitions/price"
+        },
+        "duraction": {
+          "$ref": "#/definitions/service/definitions/duraction"
+        },
+        "specialty_id": {
+          "$ref": "#/definitions/specialty/definitions/id"
+        }
+      },
+      "additionalProperties": false
+    },
     "specialty": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
       "title": "GCER - Specialty",
-      "description": "Specialties",
+      "description": "Specialties of the users for example Podologa, masseur",
       "stability": "prototype",
       "type": [
         "object"
@@ -75,7 +183,7 @@
           ]
         },
         "specialty": {
-          "description": "the email of the user",
+          "description": "the name of the specialty",
           "readOnly": true,
           "type": [
             "string"
@@ -145,7 +253,7 @@
     "user": {
       "$schema": "http://json-schema.org/draft-04/hyper-schema",
       "title": "GCER - User",
-      "description": "Users",
+      "description": "System user separator by type",
       "stability": "prototype",
       "type": [
         "object"
@@ -285,6 +393,9 @@
   "properties": {
     "error": {
       "$ref": "#/definitions/error"
+    },
+    "service": {
+      "$ref": "#/definitions/service"
     },
     "specialty": {
       "$ref": "#/definitions/specialty"

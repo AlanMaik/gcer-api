@@ -12,7 +12,8 @@ class ServicesController < ApplicationController
       service: params[:service],
       type_service: params[:type_service],
       price: params[:price],
-      duraction: params[:duraction]
+      duraction: params[:duraction],
+      specialty_id: params[:specialty_id]
     )
     render status: :created, json: service
   end

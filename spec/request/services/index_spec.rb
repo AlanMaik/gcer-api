@@ -13,9 +13,17 @@ describe 'GET /services', type: :request do
         service: 'foobar',
         type_service: 'baz',
         price: 10.00,
-        duraction: 60
+        duraction: 60,
+        specialty_id: specialty.id
       }
     ].to_json
+  end
+
+  let(:specialty) do
+    Specialty.create!(
+      specialty: 'foobar',
+      specialty_description: 'foobar baz bar'
+    )
   end
 
   before do
@@ -23,7 +31,8 @@ describe 'GET /services', type: :request do
       service: 'foobar',
       type_service: 'baz',
       price: 10.00,
-      duraction: 60
+      duraction: 60,
+      specialty: specialty
     )
     get '/services'
   end
