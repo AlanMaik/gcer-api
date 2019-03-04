@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ServicesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     service = Service.all
     render json: service
