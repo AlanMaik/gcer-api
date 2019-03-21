@@ -268,21 +268,13 @@
         },
         "email": {
           "description": "the email of the user",
-          "readOnly": true,
+          "format": "email",
           "type": [
             "string"
           ]
         },
         "kind": {
           "description": "the kind of the user, admin or professional or secretary",
-          "readOnly": true,
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "specialty": {
-          "description": "the specialty of the professional",
           "readOnly": true,
           "type": [
             "string",
@@ -359,6 +351,52 @@
             ]
           },
           "title": "List"
+        },
+        {
+          "description": "Update existing user.",
+          "href": "/users/{(%23%2Fdefinitions%2Fuser%2Fdefinitions%2Fid)}",
+          "method": "PUT",
+          "rel": "self",
+          "schema": {
+            "aditionalProperties": false,
+            "properties": {
+              "name": {
+                "$ref": "#/definitions/user/definitions/name"
+              },
+              "last_name": {
+                "$ref": "#/definitions/user/definitions/last_name"
+              },
+              "email": {
+                "$ref": "#/definitions/user/definitions/email"
+              },
+              "phone": {
+                "$ref": "#/definitions/user/definitions/phone"
+              },
+              "cpf": {
+                "$ref": "#/definitions/user/definitions/cpf"
+              },
+              "kind": {
+                "$ref": "#/definitions/user/definitions/kind"
+              },
+              "specialties_id": {
+                "$ref": "#/definitions/specialty/definitions/id"
+              }
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "targetSchema": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/user"
+              },
+              {
+                "$ref": "#/definitions/error"
+              }
+            ]
+          },
+          "title": "Update"
         }
       ],
       "properties": {
@@ -371,8 +409,8 @@
         "kind": {
           "$ref": "#/definitions/user/definitions/kind"
         },
-        "specialty": {
-          "$ref": "#/definitions/user/definitions/specialty"
+        "specialties_id": {
+          "$ref": "#/definitions/specialty/definitions/id"
         },
         "phone": {
           "$ref": "#/definitions/user/definitions/phone"

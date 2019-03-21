@@ -5,11 +5,17 @@ require 'rails_helper'
 describe 'GET /specialties', type: :request do
   subject { response.body }
 
-  let(:id) { Specialty.last.id }
+  let(:specialty) do
+    Specialty.create!(
+      specialty: 'foobar',
+      specialty_description: 'baz'
+    )
+  end
+
   let(:expected_array) do
     [
       {
-        id: id,
+        id: specialty.id,
         specialty: 'foobar',
         specialty_description: 'baz'
       }
@@ -17,10 +23,6 @@ describe 'GET /specialties', type: :request do
   end
 
   before do
-    Specialty.create!(
-      specialty: 'foobar',
-      specialty_description: 'baz'
-    )
     get '/specialties'
   end
 

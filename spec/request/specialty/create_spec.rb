@@ -17,5 +17,5 @@ describe 'POST /specialties', type: :request do
   end
 
   it { expect(response).to have_http_status(:created) }
-  it { expect(Specialty.count).to eq(1) }
+  it { expect(Specialty.count).to eq(2) }
 end

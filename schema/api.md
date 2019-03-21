@@ -142,13 +142,13 @@ System user separator by type
 | Name | Type | Description | Example |
 | ------- | ------- | ------- | ------- |
 | **cpf** | *nullable string* | the cpf of the user | `null` |
-| **email** | *string* | the email of the user | `"example"` |
+| **email** | *email* | the email of the user | `"username@example.com"` |
 | **id** | *integer* | unique identifier of the user | `42` |
 | **kind** | *nullable string* | the kind of the user, admin or professional or secretary | `null` |
 | **last_name** | *nullable string* | the last name of the user | `null` |
 | **name** | *nullable string* | the name of the user | `null` |
 | **phone** | *nullable string* | the phone of the user | `null` |
-| **specialty** | *nullable string* | the specialty of the professional | `null` |
+| **[specialties_id](#resource-specialty)** | *integer* | unique identifier of the user | `42` |
 
 ### <a name="link-GET-user-/users">User List</a>
 
@@ -165,6 +165,54 @@ GET /users
 $ curl -n https://api.gcer.com/users
  -G \
   -d 
+```
+
+
+#### Response Example
+
+```
+HTTP/1.1 200 OK
+```
+
+```json
+null
+```
+
+### <a name="link-PUT-user-/users/{(%23%2Fdefinitions%2Fuser%2Fdefinitions%2Fid)}">User Update</a>
+
+Update existing user.
+
+```
+PUT /users/{user_id}
+```
+
+#### Optional Parameters
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **cpf** | *nullable string* | the cpf of the user | `null` |
+| **email** | *email* | the email of the user | `"username@example.com"` |
+| **kind** | *nullable string* | the kind of the user, admin or professional or secretary | `null` |
+| **last_name** | *nullable string* | the last name of the user | `null` |
+| **name** | *nullable string* | the name of the user | `null` |
+| **phone** | *nullable string* | the phone of the user | `null` |
+| **specialties_id** | *integer* | unique identifier of the user | `42` |
+
+
+#### Curl Example
+
+```bash
+$ curl -n -X PUT https://api.gcer.com/users/$USER_ID \
+  -d '{
+  "name": "example",
+  "last_name": "example",
+  "email": "username@example.com",
+  "phone": "example",
+  "cpf": "example",
+  "kind": "example",
+  "specialties_id": 42
+}' \
+  -H "Content-Type: application/json"
 ```
 
 

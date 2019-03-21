@@ -1,10 +1,18 @@
 # frozen_string_literal: true
 
 RSpec.shared_context 'with current_user' do
+  let!(:specialty) do
+    Specialty.create!(
+      specialty: 'foobar',
+      specialty_description: 'foobar baz bar'
+    )
+  end
+
   let!(:current_user) do
     user = User.create!(
       email: 'current.user@email.com',
-      password: 'foobar123'
+      password: 'foobar123',
+      specialties_id: specialty.id
     )
     user
   end

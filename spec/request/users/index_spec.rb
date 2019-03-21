@@ -6,13 +6,20 @@ describe 'GET /users', type: :request do
   subject { response.body }
 
   let(:id) { User.find_by(email: 'foobar@bar.com').id }
+  let(:specialty) do
+    Specialty.create!(
+      specialty: 'foobar',
+      specialty_description: 'foobar baz bar'
+    )
+  end
+
   let(:expected_array) do
     [
       {
         id: id,
         email: 'foobar@bar.com',
         kind: nil,
-        specialty: nil,
+        specialties_id: specialty.id,
         phone: nil,
         cpf: nil,
         name: nil,
@@ -22,7 +29,7 @@ describe 'GET /users', type: :request do
         id: current_user.id,
         email: current_user.email,
         kind: nil,
-        specialty: nil,
+        specialties_id: current_user.specialties_id,
         phone: nil,
         cpf: nil,
         name: nil,
@@ -32,7 +39,11 @@ describe 'GET /users', type: :request do
   end
 
   before do
-    User.create!(email: 'foobar@bar.com', password: 'foobar123')
+    User.create!(
+      email: 'foobar@bar.com',
+      password: 'foobar123',
+      specialties_id: specialty.id
+    )
     get '/users'
   end
 
