@@ -285,7 +285,7 @@
           "description": "the specialty of the professional",
           "readOnly": true,
           "type": [
-            "string",
+            "integer",
             "null"
           ]
         },
@@ -336,7 +336,7 @@
           "method": "GET",
           "rel": "instances",
           "schema": {
-            "aditionalProperties": true,
+            "additionalProperties": true,
             "properties": {
             },
             "type": [
@@ -359,6 +359,52 @@
             ]
           },
           "title": "List"
+        },
+        {
+          "description": "Update users",
+          "href": "/users/{(%23%2Fdefinitions%2Fuser%2Fdefinitions%2Fidentity)}",
+          "method": "PUT",
+          "rel": "self",
+          "schema": {
+            "additionalProperties": true,
+            "properties": {
+              "email": {
+                "$ref": "#/definitions/user/definitions/email"
+              },
+              "kind": {
+                "$ref": "#/definitions/user/definitions/kind"
+              },
+              "specialty": {
+                "$ref": "#/definitions/user/definitions/specialty"
+              },
+              "phone": {
+                "$ref": "#/definitions/user/definitions/phone"
+              },
+              "cpf": {
+                "$ref": "#/definitions/user/definitions/cpf"
+              },
+              "name": {
+                "$ref": "#/definitions/user/definitions/name"
+              },
+              "last_name": {
+                "$ref": "#/definitions/user/definitions/last_name"
+              }
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "targetSchema": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/user"
+              },
+              {
+                "$ref": "#/definitions/error"
+              }
+            ]
+          },
+          "title": "Update"
         }
       ],
       "properties": {

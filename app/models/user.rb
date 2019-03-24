@@ -13,7 +13,7 @@ class User < ApplicationRecord
       id: id,
       email: email,
       kind: kind,
-      specialty: specialty,
+      specialty: specialties_id,
       phone: phone,
       cpf: cpf,
       name: name,

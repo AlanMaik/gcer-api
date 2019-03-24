@@ -148,7 +148,7 @@ System user separator by type
 | **last_name** | *nullable string* | the last name of the user | `null` |
 | **name** | *nullable string* | the name of the user | `null` |
 | **phone** | *nullable string* | the phone of the user | `null` |
-| **specialty** | *nullable string* | the specialty of the professional | `null` |
+| **specialty** | *nullable integer* | the specialty of the professional | `null` |
 
 ### <a name="link-GET-user-/users">User List</a>
 
@@ -165,6 +165,54 @@ GET /users
 $ curl -n https://api.gcer.com/users
  -G \
   -d 
+```
+
+
+#### Response Example
+
+```
+HTTP/1.1 200 OK
+```
+
+```json
+null
+```
+
+### <a name="link-PUT-user-/users/{(%23%2Fdefinitions%2Fuser%2Fdefinitions%2Fidentity)}">User Update</a>
+
+Update users
+
+```
+PUT /users/{user_id}
+```
+
+#### Optional Parameters
+
+| Name | Type | Description | Example |
+| ------- | ------- | ------- | ------- |
+| **cpf** | *nullable string* | the cpf of the user | `null` |
+| **email** | *string* | the email of the user | `"example"` |
+| **kind** | *nullable string* | the kind of the user, admin or professional or secretary | `null` |
+| **last_name** | *nullable string* | the last name of the user | `null` |
+| **name** | *nullable string* | the name of the user | `null` |
+| **phone** | *nullable string* | the phone of the user | `null` |
+| **specialty** | *nullable integer* | the specialty of the professional | `null` |
+
+
+#### Curl Example
+
+```bash
+$ curl -n -X PUT https://api.gcer.com/users/$USER_ID \
+  -d '{
+  "email": "example",
+  "kind": "example",
+  "specialty": 42,
+  "phone": "example",
+  "cpf": "example",
+  "name": "example",
+  "last_name": "example"
+}' \
+  -H "Content-Type: application/json"
 ```
 
 
