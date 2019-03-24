@@ -24,7 +24,7 @@ definitions:
     description: the specialty of the professional
     readOnly: true
     type:
-    - string
+    - integer
     - "null"
   phone:
     description: the phone of the user
@@ -59,7 +59,7 @@ links:
     method: GET
     rel: instances
     schema:
-      aditionalProperties: true
+      additionalProperties: true
       properties: {}
       type:
         - object
@@ -70,6 +70,34 @@ links:
             $ref: /schemata/user
         - $ref: /schemata/error
     title: List
+  - description: Update users
+    href: "/users/{(%2Fschemata%2Fuser%23%2Fdefinitions%2Fidentity)}"
+    method: PUT
+    rel: self
+    schema:
+      additionalProperties: true
+      properties:
+        email:
+          $ref: /schemata/user#/definitions/email
+        kind:
+          $ref: /schemata/user#/definitions/kind
+        specialty:
+          $ref: /schemata/user#/definitions/specialty
+        phone:
+          $ref: /schemata/user#/definitions/phone
+        cpf:
+          $ref: /schemata/user#/definitions/cpf
+        name:
+          $ref: /schemata/user#/definitions/name
+        last_name:
+          $ref: /schemata/user#/definitions/last_name
+      type:
+        - object
+    targetSchema:
+      anyOf:
+        - $ref: /schemata/user
+        - $ref: /schemata/error
+    title: Update
 properties:
   id:
     $ref: /schemata/user#/definitions/id

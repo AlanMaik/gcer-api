@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       kind: params[:kind],
       cpf: params[:cpf],
       phone: params[:phone],
-      specialty: params[:specialty],
+      specialties_id: params[:specialty],
       password: params[:password]
     )
     render status: :created, json: user
