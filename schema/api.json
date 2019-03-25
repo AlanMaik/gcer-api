@@ -331,6 +331,31 @@
       },
       "links": [
         {
+          "description": "Show the user.",
+          "href": "/users/{(%23%2Fdefinitions%2Fuser%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self",
+          "schema": {
+            "additionalProperties": true,
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "targetSchema": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/user"
+              },
+              {
+                "$ref": "#/definitions/error"
+              }
+            ]
+          },
+          "title": "Info"
+        },
+        {
           "description": "List users",
           "href": "/users",
           "method": "GET",
@@ -366,7 +391,7 @@
           "method": "PUT",
           "rel": "self",
           "schema": {
-            "additionalProperties": true,
+            "additionalProperties": false,
             "properties": {
               "email": {
                 "$ref": "#/definitions/user/definitions/email"

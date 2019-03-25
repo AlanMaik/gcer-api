@@ -150,6 +150,34 @@ System user separator by type
 | **phone** | *nullable string* | the phone of the user | `null` |
 | **specialty** | *nullable integer* | the specialty of the professional | `null` |
 
+### <a name="link-GET-user-/users/{(%23%2Fdefinitions%2Fuser%2Fdefinitions%2Fidentity)}">User Info</a>
+
+Show the user.
+
+```
+GET /users/{user_id}
+```
+
+
+#### Curl Example
+
+```bash
+$ curl -n https://api.gcer.com/users/$USER_ID
+ -G \
+  -d 
+```
+
+
+#### Response Example
+
+```
+HTTP/1.1 200 OK
+```
+
+```json
+null
+```
+
 ### <a name="link-GET-user-/users">User List</a>
 
 List users

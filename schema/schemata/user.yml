@@ -54,6 +54,20 @@ definitions:
     anyOf:
     - $ref: /schemata/user#/definitions/id
 links:
+  - description: Show the user.
+    href: "/users/{(%2Fschemata%2Fuser%23%2Fdefinitions%2Fidentity)}"
+    method: GET
+    rel: self
+    schema:
+      additionalProperties: true
+      properties: {}
+      type:
+        - object
+    targetSchema:
+      anyOf:
+        - $ref: /schemata/user
+        - $ref: /schemata/error
+    title: Info
   - description: List users
     href: /users
     method: GET
@@ -75,7 +89,7 @@ links:
     method: PUT
     rel: self
     schema:
-      additionalProperties: true
+      additionalProperties: false
       properties:
         email:
           $ref: /schemata/user#/definitions/email
